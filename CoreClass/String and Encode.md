@@ -1,10 +1,10 @@
 # Java 核心类学习
-### 字符串String
-##### 1.字符串内部是通过char[]数组表示的. 所以可以这样写:
+## 字符串String
+#### 1.字符串内部是通过char[]数组表示的. 所以可以这样写:
 ```java
 String s2 = new String(new char[] {'H', 'e', '!'});
 ```
-##### 2.==比较的是引用, 注意以下例子:
+#### 2.==比较的是引用, 注意以下例子:
 ```java
 String s1 = "hello";
 String s2 = "hello";
@@ -12,7 +12,7 @@ String s3 = "HELLO".toLowerCase();
 // s1 == s2  true
 // s1 == s3  false
 ```
-##### 3.字符串几个常用的方法:大小写转换与忽略, 包含, 搜索, 提取, 去除, 替换, 分割, 拼接:
+#### 3.字符串几个常用的方法:大小写转换与忽略, 包含, 搜索, 提取, 去除, 替换, 分割, 拼接:
 ```java
 String s1 = "hh".toLowerCase(); // 转小写
 String s2 = "hh".toUpperCase(); // 转大写
@@ -47,7 +47,7 @@ String s = "A,B,C";
 String[] s1 = s.split("\\,");   // {"A", "B", "C"}
 String s2 = String.join("---", s1); // "A---B---C"
 ```
-##### 4.类型转换
+#### 4.类型转换
 任意基本类型或者引用类型 转换成 字符串, 特别注意,引用类型转换成什么了:
 ```java
 String.valueOf(123); // "123"  int -> string
@@ -66,3 +66,7 @@ String s = new String(cs);  // char[] 作为初始化参数, 并且cs是复制�
 // 也能说明 不可变的String, 传入可变对象, 我们是复制一份而不是直接引用
 Arrays.toString(cs);
 ```
+## Encode编码
+#### ASCII GB2312 Unicode UTF-8
+ASCII 一个字节; GB2312 两个字节; Unicode 2个或者更多
+UTF-8 变长编码1~4个字节. 其中高字节位确定一个字符占多少字节,容错能力强, 常作传输编码.

@@ -1,5 +1,5 @@
-# Java 核心类学习
-## 字符串String
+# String and Encode
+## String 字符串
 #### 1.字符串内部是通过char[]数组表示的. 所以可以这样写:
 ```java
 String s2 = new String(new char[] {'H', 'e', '!'});
@@ -67,6 +67,13 @@ String s = new String(cs);  // char[] 作为初始化参数, 并且cs是复制�
 Arrays.toString(cs);
 ```
 ## Encode编码
-#### ASCII GB2312 Unicode UTF-8
+#### 1. ASCII GB2312 Unicode UTF-8
 ASCII 一个字节; GB2312 两个字节; Unicode 2个或者更多
 UTF-8 变长编码1~4个字节. 其中高字节位确定一个字符占多少字节,容错能力强, 常作传输编码.
+```java
+byte[] b1 = "Hello".getBytes("UTF-8");
+String s1 = new String(b1, "GBK");
+```
+1)这里的String构造器重载机制是怎么样的?
+
+2)Java的 String 和 char 在内存中总是以Unicode编码表示. 区别新旧版本中String内部的实现机制. 原来是char[]实现,较新的版本是byte[]实现, 这样做的意义是, String在存储ASCII是仅需要一个byte, 从而可以节省内存空间.

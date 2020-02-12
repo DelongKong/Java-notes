@@ -74,6 +74,6 @@ UTF-8 变长编码1~4个字节. 其中高字节位确定一个字符占多少字
 byte[] b1 = "Hello".getBytes("UTF-8");
 String s1 = new String(b1, "GBK");
 ```
-1)这里的String构造器重载机制是怎么样的?
+###### 1)这里的String构造器重载机制是怎么样的?
 
-2)Java的 String 和 char 在内存中总是以Unicode编码表示. 区别新旧版本中String内部的实现机制. 原来是char[]实现,较新的版本是byte[]实现, 这样做的意义是, String在存储ASCII是仅需要一个byte, 从而可以节省内存空间.
+###### 2)Java的 String 和 char 在内存中总是以Unicode编码表示. 区别新旧版本中String内部的实现机制. 原来是char[]实现,较新的版本是byte[]实现, 这样做的意义是, String在存储ASCII是仅需要一个byte, 从而可以节省内存空间.

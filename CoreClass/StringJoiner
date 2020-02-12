@@ -5,11 +5,14 @@
 如果我们想打印 "Hello name1, name2, name3, ... !"
 ```java
 String[] names = {"name1", "name2", "name3"};
-// java10特性: var sj = new StringJoiner(", ");
-StringJoiner sj = new StringJoiner(", ");
+// java10特性: var sj = new StringJoiner(", ", "Hello ", "!");
+StringJoiner sj = new StringJoiner(", ", "Hello ", "!");
+// split symbol, option: begin and end
 for(String name : names) {
   sj.add(name);
 }
 ```
 代码中提到了 var 是局部变量推断, 据说是众望所归的一个东西. 但它不是关键字!!
-仍然是保留类型, 是根据等式右边进行推断的. 
+仍然是保留类型, 是根据等式右边进行推断的.
+
+###### 1)联想到String自带一个静态方法 join(), 内部调用的就是 StringJoiner.

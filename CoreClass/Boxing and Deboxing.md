@@ -32,3 +32,26 @@ int bytesOfLong = Long.BYTES; // 8 (bytes)
 ```
 #### 6. java 是怎么处理无符号类型的?
 借助包装类型的静态方法, 将低级类型向高级转, emmmm扩大范围就涵盖了.
+
+#### 7. 注意Integer以下例子，当用valueOf()时
+
+```
+        Integer a = Integer.valueOf(128);
+        Integer b = Integer.valueOf(128);
+
+        Integer c = Integer.valueOf(127);
+        Integer d = Integer.valueOf(127);
+
+        Integer e = new Integer(128);
+        Integer f = new Integer(128);
+
+        int g = 128;
+
+        System.out.println(a == b); //false
+        System.out.println(c == d); //true
+        System.out.println(e == f); //false
+        System.out.println(a == g); //true
+        System.out.println(e == g); //true
+        System.out.println(a == e); //false
+```
+ 思考：为什么 a==b 为false， 而 c==d 为true ？

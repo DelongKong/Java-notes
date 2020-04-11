@@ -1,8 +1,5 @@
 package team.mk.DataStructure.Tree;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public interface Tree<T extends Comparable<? super T>> {
     boolean isEmpty();
     int size();
@@ -13,6 +10,7 @@ public interface Tree<T extends Comparable<? super T>> {
     String levelOrder();
     void insert(T data);
     void remove(T data);
+    void update(T data);
     T findMin();
     T findMax();
     BinaryNode findNode();

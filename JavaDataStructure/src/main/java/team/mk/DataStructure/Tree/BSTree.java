@@ -1,29 +1,21 @@
 package team.mk.DataStructure.Tree;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class AVLTree<T extends Comparable<? super T>> implements Tree<T>{
+public class BSTree<T extends Comparable<? super T>> implements Tree<T>{
 
-    private AVLNode root;
+    private BSNode root;
 
-    private class AVLNode extends BinaryNode<T> {
-        private int height;
+    private class BSNode extends BinaryNode<T> {
 
-        public int getHeight() {
-            return height;
-        }
-
-        public void setHeight(int height) {
-            this.height = height;
-        }
     }
 
-    public AVLTree() {
+    public BSTree() {
         root = null;
     }
 
     public boolean isEmpty() {
-        return false;
+        return root==null;
     }
 
     public int size() {
@@ -66,11 +58,11 @@ public class AVLTree<T extends Comparable<? super T>> implements Tree<T>{
         return null;
     }
 
-    public AVLNode findNode() {
+    public BSNode findNode() {
         return null;
     }
 
-    public AVLNode getRoot() {
+    public BSNode getRoot() {
         return this.root;
     }
 
